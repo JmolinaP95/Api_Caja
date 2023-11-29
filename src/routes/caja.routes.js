@@ -14,7 +14,7 @@ const router = Router();
 router.post("/", createCaja);
 router.put("/:id", updateCaja);
 router.delete("/:id", deleteCaja);
-router.get("/Cajas", getCajas);
+router.get("/", getCajas);
 router.get("/:id", getCaja);
 
 export default router;

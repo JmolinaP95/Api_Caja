@@ -80,16 +80,21 @@ export const updateCaja = async (req, res) => {
   }
 };
 
-export async function deleteCaja(req, res) {
+export const deleteCaja = async (req, res) => {
   const { id } = req.params;
   try {
-    await Caja.destroy({
-      where: {
-        id_caja: id,
-      },
-    });
+    const caja = await Caja.findByPk(id);
+
+    if (!caja) {
+      return res.status(404).json({ message: "Caja no encontrada" });
+    }
+
+    // Cambiar el estado a inactivo en lugar de borrar
+    caja.estado_registro = 0; // O cualquier otro valor que indique inactividad
+    await caja.save();
+
     return res.sendStatus(204);
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
-}
+};

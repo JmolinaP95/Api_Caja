@@ -5,7 +5,7 @@ import {
   deleteCaja,
   getCajas,
   getCaja
-} from "../controllers/cajas.controllers";
+} from "../controllers/cajas.controllers.js";
 
 
 const router = Router();
@@ -14,7 +14,7 @@ const router = Router();
 router.post("/", createCaja);
 router.put("/:id", updateCaja);
 router.delete("/:id", deleteCaja);
-router.get("/", getCajas);
+router.get("/Cajas", getCajas);
 router.get("/:id", getCaja);
 
 export default router;

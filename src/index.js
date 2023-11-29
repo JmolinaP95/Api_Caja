@@ -7,8 +7,8 @@ async function main() {
   try {
     await sequelize.sync({force: false});
     //await sequelize.authenticate();
-    app.listen(4000);
-    console.log("Server on port 4000");
+    app.listen(3000);
+    console.log("Server on port 3000");
     
   } catch (error) {
     

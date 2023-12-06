@@ -11,10 +11,10 @@ import {
 const router = Router();
 
 // Routes
+router.get("/", getCajas);
 router.post("/", createCaja);
 router.put("/:id", updateCaja);
 router.delete("/:id", deleteCaja);
-router.get("/", getCajas);
 router.get("/:id", getCaja);
 
 export default router;
